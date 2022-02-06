@@ -52,5 +52,6 @@ laksh.place(x=245, y=80)
 # Window
 
 window.geometry("300x100")
+window.resizable(False, False)
 window.title("Password Generator")
 window.mainloop()
