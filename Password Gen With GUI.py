@@ -46,7 +46,7 @@ gen.grid(column=2, row=1)
 output = Label(window)
 output.grid(column=2, row=2)
 
-laksh = Label(window, text="- Laksh :)") # Tis me 
+laksh = Label(window, text="- Laksh =D") # Tis me 
 laksh.place(x=245, y=80)
 
 # Window
