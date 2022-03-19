@@ -100,16 +100,26 @@ class main:
         eventList = self.event.getEventList()["Events"]
         eventList.sort(key=lambda j: j['date'])
         eList = [f"{i['name']} {i['date']}" for i in eventList]
-        var = StringVar()
-        var.set("Please choose an event")
 
-        menu = OptionMenu(win, var, *eList)
-        menu["font"] = self.font
-        menu.pack()
+        if len(eList) != 0:
+            var = StringVar()
+            var.set("Please choose an event")
 
-        button = Button(win, text="Submit", command=delete)
-        button["font"] = self.font
-        button.pack()
+            menu = OptionMenu(win, var, *eList)
+            menu["font"] = self.font
+            menu.pack()
+
+            button = Button(win, text="Submit", command=delete)
+            button["font"] = self.font
+            button.pack()
+        else:
+            invalid = Label(win, text="No registered events!")
+            invalid["font"] = self.font
+            invalid.pack()
+
+            button = Button(win, text="Enter", command=lambda: win.destroy())
+            button["font"] = self.font
+            button.pack()
 
     def eventCheck(self):
         def delete():
@@ -137,16 +147,25 @@ class main:
         eventList = self.event.getEventList()["Events"]
         eventList.sort(key=lambda j: j['date'])
         eList = [f"{i['name']} {i['date']}" for i in eventList]
-        var = StringVar()
-        var.set("Please choose an event")
+        if len(eList) != 0:
+            var = StringVar()
+            var.set("Please choose an event")
 
-        menu = OptionMenu(win, var, *eList)
-        menu["font"] = self.font
-        menu.pack()
+            menu = OptionMenu(win, var, *eList)
+            menu["font"] = self.font
+            menu.pack()
 
-        button = Button(win, text="Submit", command=delete)
-        button["font"] = self.font
-        button.pack()
+            button = Button(win, text="Submit", command=delete)
+            button["font"] = self.font
+            button.pack()
+        else:
+            invalid = Label(win, text="No registered events!")
+            invalid["font"] = self.font
+            invalid.pack()
+
+            button = Button(win, text="Enter", command=lambda: win.destroy())
+            button["font"] = self.font
+            button.pack()
 
 
 if __name__ == "__main__":
