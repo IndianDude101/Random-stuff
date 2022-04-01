@@ -17,7 +17,7 @@ go = input("Log in twat. \nEnter y to continue ")
 while go.lower() != "y":
     go = input("Log in twat. \nEnter y to continue ")
 
-MaxNum = int(input("Enter max right"))
+MaxNum = int(input("Enter max right answers "))
 START = browser.find_element(by=By.CLASS_NAME, value="very-large-button-variant")
 START.click()
 
